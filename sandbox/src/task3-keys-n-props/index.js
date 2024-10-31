@@ -5,5 +5,12 @@
  * @returns {Object} Объект с количеством вхождений типов
  */
 export const solutionFn = (obj) => {
-    // Ваш код здесь
+    const typeCountMap = {};
+
+    Object.keys(obj).forEach((key) => {
+        const valueType = typeof obj[key];
+        typeCountMap[valueType] = (typeCountMap[valueType] || 0) + 1;
+    });
+
+    return typeCountMap;
 };

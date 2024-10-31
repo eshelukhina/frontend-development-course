@@ -7,5 +7,13 @@
  * @returns {Boolean}
  */
 export const isSpam = (text, keywords) => {
-    // ваш код здесь
+    const lowerText = text.toLowerCase();
+
+    for (let keyword of keywords) {
+        if (lowerText.includes(keyword.toLowerCase())) {
+            return true; 
+        }
+    }
+
+    return false;
 };

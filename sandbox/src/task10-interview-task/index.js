@@ -1,4 +1,3 @@
-
 /**
  * Возвращает одноразрядное число, полученное в результате итеративного перемножения всех цифр числа
  * 
@@ -6,5 +5,9 @@
  * @returns {Number}
  */
 export const solutionFn = (num) => {
-    // Ваш код здесь
+    while (num >= 10) {
+        num = num.toString().split('').reduce((acc, digit) => acc * Number(digit), 1);
+    }
+    
+    return num;
 };
